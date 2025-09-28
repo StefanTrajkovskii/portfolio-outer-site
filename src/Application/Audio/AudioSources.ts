@@ -71,24 +71,24 @@ export class ComputerAudio extends AudioSource {
 export class AmbienceAudio extends AudioSource {
     poolKey: string;
 
-    constructor(manager: AudioManager) {
-        super(manager);
-        UIEventBus.on('loadingScreenDone', () => {
-            this.poolKey = this.manager.playAudio('office', {
-                volume: 1,
-                loop: true,
-                randDetuneScale: 0,
-                filter: {
-                    type: 'lowpass',
-                    frequency: 1000,
-                },
-            });
-            this.manager.playAudio('startup', {
-                volume: 0.4,
-                randDetuneScale: 0,
-            });
-        });
-    }
+    // constructor(manager: AudioManager) {
+    //     super(manager);
+    //     UIEventBus.on('loadingScreenDone', () => {
+    //         this.poolKey = this.manager.playAudio('office', {
+    //             volume: 0,
+    //             loop: true,
+    //             randDetuneScale: 0,
+    //             filter: {
+    //                 type: 'lowpass',
+    //                 frequency: 1000,
+    //             },
+    //         });
+    //         this.manager.playAudio('startup', {
+    //             volume: 0.4,
+    //             randDetuneScale: 0,
+    //         });
+    //     });
+    // }
 
     mapValues(
         input: number,
